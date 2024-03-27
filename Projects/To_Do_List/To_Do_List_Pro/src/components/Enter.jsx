@@ -8,7 +8,7 @@ function Enter() {
         <input type="date"></input>
       </div>
       <div className="col-2">
-        <button type="submit" class="btn btn-success">Add ToDo</button>
+        <button type="submit" className="btn btn-success">Add ToDo</button>
       </div>
     </div>
   );

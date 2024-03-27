@@ -1,13 +1,11 @@
-function List() {
-  let todoName = "Buy Milk";
-  let date = "20/02/2024";
+function List({todoName,todate}) {
   return (
     <div>
-      <div class="row">
-        <div class="col-6">{todoName}</div>
-        <div class="col-4">{date}</div>
-        <div class="col-2">
-          <button class="btn btn-danger">Delete</button>
+      <div className="row">
+        <div className="col-6">{todoName}</div>
+        <div className="col-4">{todate}</div>
+        <div className="col-2">
+          <button className="btn btn-danger">Delete</button>
         </div>
       </div>
     </div>
