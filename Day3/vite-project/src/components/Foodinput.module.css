@@ -1,0 +1,8 @@
+.input {
+  border: 1px solid black;
+}
+
+.divv {
+  display: flex;
+  justify-content: center;
+}

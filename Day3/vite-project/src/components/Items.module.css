@@ -1,7 +1,12 @@
-.a-span{
-    background-color: green
+.a-span {
+  background-color: green;
 }
 
-.a-item{
-    background-color: khaki;
+.a-item {
+  background-color: khaki;
+  float: left;
+}
+
+.button {
+  float: right;
 }
