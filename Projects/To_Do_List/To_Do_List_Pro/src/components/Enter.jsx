@@ -1,23 +1,17 @@
-import { useState } from "react";
-import TodoItems from "./TodoItems";
+import { useRef } from "react";
 
-function Enter({ onNewItem }) {
-  const [todoName, setTodoName] = useState("");
-  const [dueDate, setDueDate] = useState("");
 
-  const handleNameChange = (event) => {
-    setTodoName(event.target.value);
-  };
+// eslint-disable-next-line react/prop-types
+function Enter({onNewItem}) {
 
-  const handleDateChange = (event) => {
-    setDueDate(event.target.value);
-  };
+  const todoNameElement = useRef();
+  const todoDateElement = useRef();
 
   const handleAddButtonClicked = (event) => {
     event.preventDefault();
-    onNewItem(todoName, dueDate);
-    setDueDate("");
-    setTodoName("");
+    const todoName=todoNameElement.current.value;
+    const todoDate=todoDateElement.current.value;
+    onNewItem(todoName,todoDate);
   };
 
   return (
@@ -27,13 +21,13 @@ function Enter({ onNewItem }) {
       <div className="col-6">
         <input
           type="text"
+          ref={todoNameElement}
           placeholder="Enter To-do"
-          value={todoName}
-          onChange={handleNameChange}
         ></input>
       </div>
       <div className="col-3">
-        <input type="date" value={dueDate} onChange={handleDateChange}></input>
+        <input type="date" 
+          ref={todoDateElement} ></input>
       </div>
       <div className="col-2">
         <button
