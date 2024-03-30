@@ -5,7 +5,7 @@ import styles from "./TodoItems.module.css";
 const TodoItems = () => {
   
   const contextObj = useContext(TodoItemsContext);
-  const todoItems = contextObj.todoItems;
+  const todoItems = contextObj.todoItem;
   const deleteItem = contextObj.deleteItem;
   return (
     <>

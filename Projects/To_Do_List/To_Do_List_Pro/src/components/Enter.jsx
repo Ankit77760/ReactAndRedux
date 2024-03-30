@@ -26,11 +26,13 @@ function Enter() {
           type="text"
           ref={todoNameElement}
           placeholder="Enter To-do"
+          required
         ></input>
       </div>
       <div className="col-3">
         <input type="date" 
-          ref={todoDateElement} ></input>
+          ref={todoDateElement} 
+          required></input>
       </div>
       <div className="col-2">
         <button
