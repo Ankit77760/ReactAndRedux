@@ -1,8 +1,11 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { TodoItemsContext } from "../store/todo-items-store";
 
 
 // eslint-disable-next-line react/prop-types
-function Enter({onNewItem}) {
+function Enter() {
+
+  const {addNewItems} = useContext(TodoItemsContext);
 
   const todoNameElement = useRef();
   const todoDateElement = useRef();
@@ -11,7 +14,7 @@ function Enter({onNewItem}) {
     event.preventDefault();
     const todoName=todoNameElement.current.value;
     const todoDate=todoDateElement.current.value;
-    onNewItem(todoName,todoDate);
+    addNewItems(todoName,todoDate);
   };
 
   return (

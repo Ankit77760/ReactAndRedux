@@ -1,12 +1,23 @@
+import { TodoItemsContext } from "../store/todo-items-store";
+import { useContext } from "react";
 import List from "./List";
-import styles from "./TodoItems.module.css"
-const TodoItems = ({ todoItems,onDeleteClick }) => {
+import styles from "./TodoItems.module.css";
+const TodoItems = () => {
+  
+  const contextObj = useContext(TodoItemsContext);
+  const todoItems = contextObj.todoItems;
+  const deleteItem = contextObj.deleteItem;
   return (
     <>
       <div className={styles.itemContainer}>
-        {todoItems.map(item=>
-            <List todoName={item.iname} todate={item.dueDate} onDeleteClick={onDeleteClick}></List>
-        )}
+        {todoItems.map((item) => (
+          <List
+          key={item.iname}
+            todoName={item.iname}
+            todate={item.dueDate}
+            onDeleteClick={deleteItem}
+          ></List>
+        ))}
       </div>
     </>
   );
