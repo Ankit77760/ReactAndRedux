@@ -13,13 +13,16 @@ function Enter({ onNewItem }) {
     setDueDate(event.target.value);
   };
 
-  const handleAddButtonClicked = () => {
+  const handleAddButtonClicked = (event) => {
+    event.preventDefault();
     onNewItem(todoName, dueDate);
     setDueDate("");
     setTodoName("");
   };
 
   return (
+    <div className="container text-center">
+    <form action="" onSubmit={handleAddButtonClicked} className="form">
     <div className="row">
       <div className="col-6">
         <input
@@ -29,18 +32,18 @@ function Enter({ onNewItem }) {
           onChange={handleNameChange}
         ></input>
       </div>
-      <div className="col-4">
+      <div className="col-3">
         <input type="date" value={dueDate} onChange={handleDateChange}></input>
       </div>
       <div className="col-2">
         <button
-          type="submit"
-          className="btn btn-success"
-          onClick={handleAddButtonClicked}
+          className=" btn btn-success"
         >
           Add ToDo
         </button>
       </div>
+    </div>
+    </form>
     </div>
   );
 }
