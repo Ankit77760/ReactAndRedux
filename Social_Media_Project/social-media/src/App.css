@@ -1,0 +1,46 @@
+.appContainer{
+  display: flex;
+}
+
+.sidebar{
+  min-height: 100vh;
+}
+
+.content{
+  width: 100%;
+}
+
+.post-card{
+  margin: 20px 50px;
+  min-width: 30rem;
+}
+
+.hashtag{
+  margin: 0px 3px;
+}
+
+.likes{
+  margin-top: 15px ;
+}
+
+.createPost{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 3%;
+}
+
+.postTitle{
+  margin: 5px;
+}
+
+.postTitleinput{
+  margin: 5px;
+}
+
+.content{
+  margin: 5px;
+}
+
+.contentinput{
+  margin: 5px;
+}
